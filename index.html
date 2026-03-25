@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praveen Cuisine | Restaurant Menu & Reservation</title>
+  <meta name="description" content="Modern restaurant website with menu browsing, reservation form, responsive layout, and smooth interactions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="loader" id="loader">
+    <div class="loader__ring"></div>
+    <p>Preparing your table...</p>
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8679;</button>
+
+  <header class="hero" id="home">
+    <nav class="navbar" id="navbar">
+      <a class="brand" href="#home">
+        <span class="brand__mark">P</span>
+        <span class="brand__text">
+          <strong>Praveen Cuisine</strong>
+          <small>Seasonal dining, artfully plated</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#reservation" class="nav-link">Reservation</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero__overlay"></div>
+    <div class="hero__content container reveal">
+      <p class="eyebrow">Fine dining reimagined</p>
+      <h1>Every course tells a richer story.</h1>
+      <p class="hero__text">
+        Experience fire-kissed flavors, elegant plating, and warm hospitality in a contemporary dining room designed for long conversations and unforgettable evenings.
+      </p>
+      <div class="hero__actions">
+        <a href="#reservation" class="btn btn--primary">Book Table</a>
+        <a href="#menu" class="btn btn--secondary">Explore Menu</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section menu-section" id="menu">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Curated menu</p>
+          <h2>Crafted with seasonal ingredients and refined technique.</h2>
+          <p>Browse our signature dishes by course and discover flavors designed to linger.</p>
+        </div>
+
+        <div class="menu-toolbar reveal">
+          <div class="menu-filters">
+            <button class="filter-btn active" data-filter="all" type="button">All</button>
+            <button class="filter-btn" data-filter="Breakfast" type="button">Breakfast</button>
+            <button class="filter-btn" data-filter="Lunch" type="button">Lunch</button>
+            <button class="filter-btn" data-filter="Snacks" type="button">Snacks</button>
+            <button class="filter-btn" data-filter="Dinner" type="button">Dinner</button>
+          </div>
+        </div>
+
+        <div class="menu-grid" id="menuGrid"></div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=80" alt="Chef preparing plated fine dining dish">
+        </div>
+
+        <div class="about-content reveal">
+          <p class="eyebrow">About us</p>
+          <h2>A modern dining room inspired by warmth, detail, and balance.</h2>
+          <p>
+            At Praveen Cuisine, our philosophy is simple: honest ingredients, thoughtful technique, and service that feels effortless. From bright breakfasts to refined dinners, every dish is designed to feel both comforting and elevated.
+          </p>
+          <p>
+            We blend seasonal produce, Italian inspiration, and a deep respect for classic hospitality to create a restaurant experience that feels intimate, polished, and distinctly memorable.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reservation-section" id="reservation">
+      <div class="container reservation-grid">
+        <div class="reservation-copy reveal">
+          <p class="eyebrow">Reserve your table</p>
+          <h2>Plan a beautiful evening in just a few steps.</h2>
+          <p>
+            Reserve for breakfast, lunch, snacks, or dinner. Complete the form and we'll confirm your request instantly on the page.
+          </p>
+          <div class="reservation-highlight">
+            <strong>Private dining available</strong>
+            <span>For larger groups or celebrations, contact us directly for a tailored setup.</span>
+          </div>
+        </div>
+
+        <form class="reservation-form reveal" id="reservationForm" novalidate>
+          <div class="form-grid">
+            <label>
+              <span>Name</span>
+              <input type="text" id="name" name="name" placeholder="Your full name">
+              <small class="error-text"></small>
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input type="email" id="email" name="email" placeholder="name@example.com">
+              <small class="error-text"></small>
+            </label>
+
+            <label>
+              <span>Phone</span>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+              <small class="error-text"></small>
+            </label>
+
+            <label>
+              <span>Date</span>
+              <input type="date" id="date" name="date">
+              <small class="error-text"></small>
+            </label>
+
+            <label>
+              <span>Time</span>
+              <input type="time" id="time" name="time">
+              <small class="error-text"></small>
+            </label>
+
+            <label>
+              <span>Guests</span>
+              <input type="number" id="guests" name="guests" min="1" max="12" placeholder="2">
+              <small class="error-text"></small>
+            </label>
+          </div>
+
+          <button class="btn btn--primary btn--full" type="submit">Confirm Reservation</button>
+          <p class="form-message" id="formMessage" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Visit us in the heart of the city.</h2>
+          <p><strong>Address:</strong> 14 Anna Salai, Vellore, Tamil Nadu 632001</p>
+          <p><strong>Phone:</strong> +91 80 4567 8901</p>
+          <p><strong>Email:</strong> hello@praveencuisine.com</p>
+        </div>
+
+        <div class="map-card reveal">
+          <iframe
+            src="https://www.google.com/maps?q=Vellore%20Tamil%20Nadu&z=14&output=embed"
+            title="Restaurant location"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="dish-modal" id="dishModal" aria-hidden="true">
+    <div class="dish-modal__backdrop" id="dishModalBackdrop"></div>
+    <div class="dish-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="dishModalTitle">
+      <button class="dish-modal__close" id="dishModalClose" type="button" aria-label="Close dish details">&times;</button>
+      <div class="dish-modal__media">
+        <img id="dishModalImage" src="" alt="">
+      </div>
+      <div class="dish-modal__content">
+        <span class="dish-modal__category" id="dishModalCategory"></span>
+        <h3 id="dishModalTitle"></h3>
+        <p id="dishModalDescription"></p>
+        <div class="dish-modal__meta">
+          <div>
+            <small>Price</small>
+            <strong id="dishModalPrice"></strong>
+          </div>
+          <div>
+            <small>Protein</small>
+            <strong id="dishModalProtein"></strong>
+          </div>
+          <div>
+            <small>Calories</small>
+            <strong id="dishModalCalories"></strong>
+          </div>
+        </div>
+        <div class="dish-modal__details">
+          <small>Chef's note</small>
+          <p id="dishModalDetails"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <strong>Praveen Cuisine</strong>
+        <p>Elegant dining with modern warmth.</p>
+      </div>
+      <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">Instagram</a>
+        <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">Facebook</a>
+        <a href="https://www.twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter">X</a>
+      </div>
+      <p>&copy; 2026 praveenkumar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
