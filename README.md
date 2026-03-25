@@ -6,7 +6,7 @@ A modern, responsive restaurant website that allows users to explore menu items 
 
 ## 🚀 Live Demo
 
-👉 https://praveenkumar3904.github.io/Restaurent-Website/
+👉 https://praveenkumar3904.github.io/Restaurant-Website/
 
 ---
 
@@ -31,8 +31,8 @@ A modern, responsive restaurant website that allows users to explore menu items 
 
 ## ⚙️ Run Locally
 
-```bash
-git clone https://github.com/praveenkumar3904/Restaurent-Website.git
+```bash id="g2k9w1"
+git clone https://github.com/praveenkumar3904/Restaurant-Website.git
 ```
 
 Open `index.html` in your browser.
